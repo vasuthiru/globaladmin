@@ -1,0 +1,22 @@
+<div>
+    <mat-card>
+        <div class="ga-p-3 ga-text-center">
+            <div class="ga-w-20">
+                <img src="../../../../assets/images/user.png" width="30%" alt="">
+            </div>
+            <div class="ga-mb-5">
+                <h1 class="ga-pt-2">{{profileData.school_name | titlecase}}</h1>
+                <h5>{{profileData.type | titlecase | replaceFilter}}</h5>
+                <button class="ga-btn-primary-text ga-mr-2">Edit Profile</button>
+                <button class="ga-btn-b ga-ml-2">Edit Profile</button>
+            </div>
+            
+        </div> 
+        <div>
+            <div *ngFor="let profile of profileData|keyvalue">
+                <p class="ga-lh">{{profile.key | titlecase | replaceFilter}}</p>
+                <p class="ga-list">{{profile.value }}</p>
+            </div>
+        </div>           
+    </mat-card>
+</div>

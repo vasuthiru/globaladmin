@@ -1,0 +1,11 @@
+<span *ngIf="!config || (config && config.length)">
+  <ng-container *ngFor="let image of iconsDetails">
+    <i
+      *ngIf="!config || (config && config.includes(image.icon))"
+      class="icon cursor-pointer material-icons"
+      matTooltipClass="dxt-tooltip"
+      [matTooltip]="image.text"
+      (click)="iconAction($event, image.icon)"
+    > {{ image.icon }} </i>
+  </ng-container>
+</span>

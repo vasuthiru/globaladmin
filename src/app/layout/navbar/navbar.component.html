@@ -1,0 +1,90 @@
+<div class="ga-bg-white topNav">
+  <button
+    mat-icon-button
+    (click)="toggleSideBar('toggle')"
+    (mouseenter)="toggleSideBar('enter')"
+    (mouseleave)="toggleSideBar('leave')"
+  >
+    <mat-icon [svgIcon]="hamberger"></mat-icon></button
+  >&nbsp;&nbsp;
+  <h1 class="ga-text-primary-600-b ga-m-0">Hello Admin</h1>
+  <span class="spacer"></span>
+  <div class="formField">
+    <mat-form-field appearance="outline">
+      <input matInput placeholder="Search" />
+      <mat-icon matPrefix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  <button
+    class="ga-btn"
+    (mouseenter)="mouseEvent('enter', 'plus')"
+    (mouseleave)="mouseEvent('leave', 'plus')"
+    [matMenuTriggerFor]="menu"
+  >
+    <mat-icon class="ga-plus" [svgIcon]="plus_button"></mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" class="inlineMenu">
+    <mat-list class="inline-list">
+      <mat-list-item routerLink="group" [queryParams]="{'type':'add'}"> Add Group </mat-list-item>
+      <mat-list-item routerLink="school"> Add School </mat-list-item>
+    </mat-list>
+  </mat-menu>
+  <button mat-icon-button class="ga-btn" [matMenuTriggerFor]="profilemenu">
+    <mat-icon class="bg-plus" svgIcon="circleimage"></mat-icon>
+  </button>
+  <mat-menu #profilemenu="matMenu">
+    <button mat-menu-item>{{userInfo?.first_name}}</button>
+    <button mat-menu-item>{{userInfo?.last_name}}</button>
+    <button mat-menu-item>{{userInfo?.user_type}}</button>
+    <button mat-menu-item>{{userInfo?.username}}</button>
+    <button mat-menu-item  (click)="logout()"> Logout
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </mat-menu>
+  <button
+    mat-icon-button
+    class="ga-btn"
+    (mouseenter)="mouseEvent('enter', 'bell')"
+    (mouseleave)="mouseEvent('leave', 'bell')"
+  >
+    <mat-icon [svgIcon]="bell_button"></mat-icon>
+  </button>
+</div>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-white bg-white p-0" #navbar>
+    <div class="container-fluid">
+        <div>
+            <span>
+                <img src="assets/svgs/align-left.svg" alt="" (click)="toggleSideBar()">
+            </span>
+            <a class="navbar-brand ms-3 gaTitle fw-bold">Hello Admin</a>
+        </div>
+        <form class="d-flex">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="javascript:void(0)" id="searchBar">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <i class="fa fa-search"></i>
+                </a>
+                <a class="nav-link" href="javascript:void(0)"><i class="fa fa-plus"></i></a>
+                <div class="nav-link dropdown">
+                    <a class="dropdown-toggle p-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fa fa-plus"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li>
+                        <a class="dropdown-item" routerLink="group">Add Group</a>                        
+                      </li> 
+                      <li>
+                        <a class="dropdown-item" routerLink="school">Add  School</a>                        
+                      </li>                      
+                    </ul>
+                </div>
+                <a class="nav-link" href="javascript:void(0)">
+                    <img  src="https://www.whatsappprofiledpimages.com/wp-content/uploads/2021/08/Profile-Photo-Wallpaper.jpg" width="36" height="36" class="border border-2 rounded-circle" alt="">
+                </a>
+                <a class="nav-link" href="javascript:void(0)"><i class="fa fa-bell"></i></a>
+                
+            </div>
+        </form>
+    </div>
+  </nav> -->

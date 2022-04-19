@@ -1,0 +1,51 @@
+<section>
+  <form [formGroup]="summaryForm" #summaryFormDir="ngForm" (ngSubmit)="onSubmitsummaryForm()">
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+      <div fxFlex class="ga-width-30">Group Name<span class="invalidStar">*</span></div>
+      <div class="ga-width-70">
+        <div class="formField ga-m-2">
+          <mat-form-field class="ga-width-100" appearance="outline">
+            <!-- <mat-label>Group Name</mat-label> -->
+            <input matInput placeholder="Group Name" autocomplete="off" [errorStateMatcher]="matcher" formControlName="group_name" required>
+            <mat-error *ngIf="controls['group_name'].hasError('required')">
+            Please enter a valid Group Name
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div> 
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+      <div fxFlex class="ga-width-30">Group Address<span class="invalidStar">*</span></div>
+      <div class="ga-width-70">
+        <div class="formField ga-m-2">
+          <mat-form-field class="ga-width-100" appearance="outline">
+            <!-- <mat-label>Address Line1</mat-label> -->
+            <input matInput placeholder="Group Address" autocomplete="off" [errorStateMatcher]="matcher" formControlName="group_address" required>
+            <mat-error *ngIf="controls['group_address'].hasError('required')">
+              Address Required*
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div> 
+    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+      <div fxFlex class="ga-width-30">Group Staff<span class="invalidStar">*</span></div>
+      <div class="ga-width-70">
+        <div class="formField ga-m-2">
+          <mat-form-field appearance="outline">
+            <!-- <mat-label>Address Line1</mat-label> -->
+            <input matInput placeholder="Group Staff" autocomplete="off" [errorStateMatcher]="matcher" formControlName="group_staff" required>
+            <mat-error *ngIf="controls['group_staff'].hasError('required')">
+              Address Required*
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div> 
+    
+    <div class="ga-text-center ga-m-2">
+        <button class="ga-btn-b" type="button"(click)="previous()">Previous</button> &nbsp;
+        <button class="ga-btn-primary" type="submit">Done</button>
+    </div>
+  </form>
+</section>

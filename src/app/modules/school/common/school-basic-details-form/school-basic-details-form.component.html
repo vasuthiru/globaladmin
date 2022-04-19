@@ -1,0 +1,46 @@
+<section>
+  <form [formGroup]="basicDetailsForm" #basicForm="ngForm" (ngSubmit)="onSubmitBasicDetailsForm()">    
+    <ng-container *ngFor="let field of formFields">
+      <div *ngIf="field.type==='text'" class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+        <div fxFlex class="ga-width-30">{{field.label}}<span class="invalidStar">*</span></div>
+        <div class="ga-width-70 formField">
+          <mat-form-field [ngClass]="(field.control==='address_line1')?'ga-width-100':'ga-width-80'" appearance="outline">
+            <input matInput [attr.placeholder]="field.placeholder" autocomplete="off" [formControlName]="field.control" required>
+            <mat-error *ngIf="controls[field.control].hasError('required')">
+            Please enter a {{field.label}}
+            </mat-error>
+          </mat-form-field>                  
+        </div>
+      </div>
+      <div *ngIf="field.type==='number'" class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+        <div fxFlex class="ga-width-30">{{field.label}}<span class="invalidStar">*</span></div>
+        <div class="ga-width-70 formField">
+          <mat-form-field appearance="outline">
+            <input matInput onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" [attr.maxlength]="(field.label==='pincode')?6:10" [attr.placeholder]="field.placeholder" autocomplete="off" [formControlName]="field.control" required>
+            <mat-error *ngIf="controls[field.control].hasError('required')">
+            Please enter a {{field.label}}
+            </mat-error>
+          </mat-form-field>                  
+        </div>
+      </div>
+      <div *ngIf="field.type==='select'" class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+        <div fxFlex class="ga-width-30">{{field.label}}<span class="invalidStar">*</span></div>
+        <div class="ga-width-70 formField">
+          <mat-form-field class="ga-width-80" appearance="outline">
+            <mat-select placeholder="State" formControlName="state">
+                <mat-option value="telangana">Telangana</mat-option>
+                <mat-option value="andhrapradesh">Andhrapradesh</mat-option>
+              </mat-select>
+              <mat-error *ngIf="controls[field.control].hasError('required')">
+                {{field.label}} Required*
+              </mat-error>
+          </mat-form-field>                  
+        </div>
+      </div>
+    </ng-container>
+    
+    <div class="ga-text-center ga-mt-5 ga-mb-2">
+      <button class="ga-btn-primary" type="submit">Next</button>
+    </div>
+  </form>
+</section>

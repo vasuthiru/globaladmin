@@ -1,0 +1,26 @@
+<mat-icon
+  *ngIf="sortedCol === column.field && sortOrder === 'asc'"
+  aria-label="icon"
+  (click)="onSortRequested(column.field, 'desc')"
+  class="sort-icon active"
+>
+  arrow_upward
+</mat-icon>
+
+<mat-icon
+  *ngIf="sortedCol === column.field && sortOrder === 'desc'"
+  aria-label="icon"
+  (click)="onSortRequested(column.field, '')"
+  class="sort-icon active"
+>
+  arrow_downward
+</mat-icon>
+
+<mat-icon
+  *ngIf="sortedCol !== column.field || sortOrder === ''"
+  aria-label="icon"
+  (click)="onSortRequested(column.field, 'asc')"
+  class="sort-icon"
+>
+  arrow_upward
+</mat-icon>

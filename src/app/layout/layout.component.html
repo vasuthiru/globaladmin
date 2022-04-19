@@ -1,0 +1,36 @@
+<!-- <div id="ga-layout">
+    <ga-navbar (toggleMenu)="toggleMenu($event)"></ga-navbar>
+
+    <div>
+        <ga-sidebar [is_toggled_flag]="is_toggled"></ga-sidebar>
+        <div id="main">
+            <div id="mainContent">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div> -->
+<!-- <div class="flex-container">
+    <header>
+        <ga-navbar (toggleMenu)="toggleMenu($event)"></ga-navbar>
+    </header>
+    <div class="sidebar">
+        <ga-sidebar [is_toggled_flag]="is_toggled"></ga-sidebar>
+    </div>
+    <div class="maincontent">
+        <router-outlet></router-outlet>
+    </div>
+</div> -->
+<div class="flexcontainer">
+    <header>
+        <ga-navbar (toggleMenu)="toggleMenu($event)"></ga-navbar>
+    </header>
+    <div class="flexrow">
+        <div class="sidenavigation">
+            <ga-sidebar [is_toggled_flag]="is_toggled"></ga-sidebar>
+        </div>
+        <div class="maincontent">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

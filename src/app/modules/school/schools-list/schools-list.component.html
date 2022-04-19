@@ -1,0 +1,19 @@
+<!-- <div class="ga-row">
+    <div class="ga-col ga-col-4">
+        <ga-profile-data></ga-profile-data>
+    </div>
+    <div class="ga-col ga-col-8">
+        rrr
+    </div>
+</div> -->
+<div class="flexcontainer">
+    <div class="flexitem1">
+        <ga-profile-data></ga-profile-data>
+    </div>
+    <div class="flexitem2">
+        <div class="ga-m-0">
+            <app-table [colDef]="columnDefs" [data]="userData.users" (iconClicked)="iconClickedHome($event)"></app-table>
+            
+            </div>
+    </div>
+</div>

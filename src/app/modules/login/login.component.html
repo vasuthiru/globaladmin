@@ -1,0 +1,110 @@
+<div class="flexcontainer">
+    <header>
+        <mat-toolbar class="ga-bg-white">    
+            <h1 class="ga-text-primary-600-b ga-ml-5">Welcome </h1>
+        </mat-toolbar>
+    </header>
+    <div class="main_content ga-pagelayout ga-container-center">
+        <div class="ga-text-center" style="width: 18rem;">
+            <div class="ga-m-3">
+                <img src="assets/images/logo.png" width="25%" alt="">
+            </div>
+            <div>
+                <h3>{{isOtpValid?'Enter O.T.P.':'Log-In'}}</h3>
+            </div>
+            <ng-container *ngIf="!isOtpValid">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+                    <div class="ga-m-2 formField">
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="User Id" formControlName="user_id" autocomplete="off" required>
+                            <mat-error *ngIf="loginControls['user_id'].hasError('required')">
+                            Please enter a valid User Id Name
+                            </mat-error>
+                        </mat-form-field> 
+                    </div>
+                    <div class="ga-m-2 formField">
+                        <mat-form-field appearance="outline">
+                            <input matInput placeholder="Phone Number" maxlength="10" gaNumber formControlName="phone_number" autocomplete="off" required>
+                            <mat-error *ngIf="loginControls['phone_number'].hasError('required')">
+                            Please enter a valid Phone Number
+                            </mat-error>
+                        </mat-form-field> 
+                    </div>
+                    <div class="ga-m-2">
+                        <button type="submit" class="ga-btn-primary ga-width-100">Generate OTP</button>
+                    </div>
+                </form>
+            </ng-container>
+            
+            <ng-container *ngIf="isOtpValid">
+                <form [formGroup]="otpForm" #otpDir="ngForm" (ngSubmit)="onSubmitOtp()">
+                    <div style="display: inline-flex;">
+                        <div class="ga-m-2 formField" style="width:2.5rem" *ngFor="let otp of formInput; let i=index">
+                            <mat-form-field appearance="outline" style="text-align: center;">
+                                <input type="password" #formRow matInput [formControlName]="otp" maxlength="1" name="{{otp}}" (keyup)="keyUpEvent($event, i)" class="{{otp}}" gaNumber autocomplete="off" required>                                           
+                            </mat-form-field> 
+                        </div>
+                    </div>
+                    <mat-error class="otpMatErr" *ngIf="(otpControls['one'].hasError('required')||otpControls['two'].hasError('required')||otpControls['three'].hasError('required')||otpControls['four'].hasError('required')||otpControls['five'].hasError('required')||otpControls['six'].hasError('required'))&&otpDir.submitted">
+                        Please enter a valid OTP
+                    </mat-error> 
+                    <div class="ga-m-2">
+                        <button type="submit" class="ga-btn-primary ga-width-100">Log-in</button>
+                        <br>
+                        <div class="ga-mt-2">
+                            <a class="otpTimer" *ngIf="otpTimer!==0" href="javascript:void(0)">{{otpTimer}}</a>
+                            <a class="otpresend"  href="javascript:void(0)" (click)="resendOTP()" *ngIf="otpTimer===0">Resend Otp</a>    
+                        </div>
+                    </div>
+                </form>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div  class="ga-bg-layout ga-container-center">
+    <div class="ga-text-center" style="width: 18rem;">
+        <div class="ga-m-3">
+            <img src="assets/images/logo.png" width="25%" alt="">
+        </div>
+        <div>
+            <h3>{{isOtpValid?'Enter O.T.P.':'Log-In'}}</h3>
+        </div>
+        <ng-container *ngIf="!isOtpValid">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+                <div class="ga-m-3 formField">
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="User Id" formControlName="user_id" autocomplete="off" required>
+                        <mat-error *ngIf="loginControls['user_id'].hasError('required')">
+                        Please enter a valid User Id Name
+                        </mat-error>
+                    </mat-form-field> 
+                </div>
+                <div class="ga-m-3">
+                    <button type="submit" class="ga-btn-primary ga-width-100">Continue</button>
+                </div>
+            </form>
+        </ng-container>
+        
+        <ng-container *ngIf="isOtpValid">
+            <form [formGroup]="otpForm" #otpDir="ngForm" (ngSubmit)="onSubmitOtp()">
+                <div style="display: inline-flex;">
+                    <div class="ga-m-3 formField" style="width:2rem" *ngFor="let otp of formInput; let i=index">
+                        <mat-form-field appearance="outline" style="text-align: center;">
+                            <input #formRow matInput [formControlName]="otp" maxlength="1" (keyup)="keyUpEvent($event, i)" id="{{otp}}" infitiqNumber app autocomplete="off" required>                                           
+                        </mat-form-field> 
+                    </div>
+                </div>
+                <mat-error class="otpMatErr" *ngIf="(otpControls['one'].hasError('required')||otpControls['two'].hasError('required')||otpControls['three'].hasError('required')||otpControls['four'].hasError('required')||otpControls['five'].hasError('required')||otpControls['six'].hasError('required'))&&otpDir.submitted">
+                    Please enter a valid OTP
+                </mat-error> 
+                <div class="ga-m-3">
+                    <button type="submit" class="ga-btn-primary ga-width-100">Log-in</button>
+                </div>
+            </form>
+        </ng-container>
+    </div>
+</div> -->
+
+<!-- <app-assignment></app-assignment> -->

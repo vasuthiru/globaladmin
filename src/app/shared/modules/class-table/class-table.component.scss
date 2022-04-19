@@ -1,0 +1,34 @@
+section{
+    mat-card{
+        padding: 0;
+        mat-card-content{
+            padding: 10px;
+            table{
+                padding: 10px;
+                tr{            
+                    td, th{
+                       padding: 5px 5px 10px 5px; 
+                    }
+                }
+                .rowActive{
+                    pointer-events: inherit;
+                    background-color: inherit;
+                }
+                .rowInactive{
+                    pointer-events: none;
+                    // background-color: #adafb138;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+.colActive{
+    pointer-events: inherit;
+    // background-color: inherit;
+}
+.colInactive{
+    pointer-events: none;
+    user-select: none;
+    background-color: #babcbe4d;
+}

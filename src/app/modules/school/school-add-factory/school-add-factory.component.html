@@ -1,0 +1,56 @@
+<div >
+    <div class="ga-stepper">     
+        <mat-stepper [linear]="isLinear" labelPosition="bottom" #stepper [selectedIndex]="selectedIndex" (selectionChange)="stepChange($event)">                   
+            <mat-step label="Basic Details">
+              <section id="section_stepper">
+                <div id="stepPart">
+                  <ga-school-basic-details (formEvent)="formSubmit($event)"></ga-school-basic-details>
+                </div>
+              </section>
+            </mat-step>
+            <mat-step label="Class & Subject" state="chat">
+              <!-- <ga-class-subject (classSelection)="getClassSelection($event)" ></ga-class-subject> -->
+              <section id="section_stepper">
+                <div id="stepPart">
+                  <ga-class-subject (classSubjectFormEvent)="classSubjectFormSubmit($event)" ></ga-class-subject>
+                </div>
+              </section>
+            </mat-step>
+            <mat-step label="Upload Staff" state="chat">
+              <section id="section_stepper">
+                <div id="stepPart">
+                  <ga-upload-file [uploadLabel]="'Upload staff file'" (uploadFormEvent)="uploadFileSubmit($event)" (uploadFormPrevious)="uploadFilePrevious($event)"></ga-upload-file>
+                </div>
+              </section>
+            </mat-step>
+            <mat-step label="Upload Students" state="chat">
+              <section id="section_stepper">
+                <div id="stepPart">
+                  <ga-upload-file [uploadLabel]="'Upload Students file'" (uploadFormEvent)="uploadFileSubmit($event)" (uploadFormPrevious)="uploadFilePrevious($event)"></ga-upload-file>
+                </div>
+              </section>
+            </mat-step>
+            <mat-step label="summary" state="chat">
+              <section id="section_stepper">
+                <div id="stepPart">
+                  <ga-school-summary-form (schoolSummaryFormSubmit)="schoolFormEvent($event)" (summaryFormPrevious)="summaryFormPrevious($event)"></ga-school-summary-form>
+                </div>
+              </section>
+            </mat-step>
+            <!-- <mat-step label="Upload Staff" state="chat">
+              <ga-upload-file [uploadLabel]="'group staff'" (uploadFormEvent)="uploadFormSubmit($event)" (uploadFormPrevious)="uploadFormPrevious($event)"></ga-upload-file>
+            </mat-step> -->
+            <!-- <mat-step label="Summary">
+              <ga-summary-form [is_summaryForm]="is_summaryForm" (summaryFormEvent)="summaryFormSubmit($event)" (summaryFormPrevious)="summaryFormPrevious($event)"></ga-summary-form>
+            </mat-step> -->
+
+            <!-- Icon overrides. -->
+            <ng-template matStepperIcon="phone">
+              <mat-icon>call_end</mat-icon>
+            </ng-template>
+            <ng-template matStepperIcon="chat">
+              <mat-icon>forum</mat-icon>
+            </ng-template>
+        </mat-stepper>
+    </div>
+</div>

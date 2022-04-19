@@ -1,0 +1,81 @@
+@import "../variables/colors.variables.scss";
+// formField
+.formField {
+    .mat-form-field {
+        width: 100% !important;
+    }
+    .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+        // border: 0.2px solid #666;
+        border: none;
+        opacity: 1;
+        border-radius: 5px;
+        box-shadow: 0px 0px 0px 4px $matinputBshadow;
+        .mat-form-field-outline-start,
+        .mat-form-field-outline-gap,
+        .mat-form-field-outline-end {
+            border: none;
+        }
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline{
+        border:none;
+        background-color: $ga-white;
+        border-radius: .275rem;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+        border: none;
+        box-shadow: 0px 0px 0px 4px $matinputBshadow;
+        color: $matinputThick;
+    }
+}
+
+// mat stepper
+.ga-stepper{
+    flex: 1 1 100%;
+    .mat-stepper-label-position-bottom .mat-horizontal-stepper-header-container{
+        width: 100%;
+    }
+}
+.mat-stepper-horizontal{
+    background-color: transparent;
+}
+.mat-step-header .mat-step-label.mat-step-label-active {
+    color: map-get($primary, act);
+}
+.mat-step-header .mat-step-icon-state-done{
+    background-color: map-get($primary, act);
+}
+.mat-horizontal-stepper-header { 
+    pointer-events: none !important; 
+}
+.mat-step-header .mat-step-icon-state-edit{
+    background: map-get($primary, act);
+}
+.mat-step-header .mat-step-icon-selected{
+    background: map-get($primary, act);
+    pointer-events: inherit; 
+}
+
+// mat stepper section setting
+.section_stepper{
+    padding: 0;
+    margin: 0;
+    list-style: none;    
+    // display: -webkit-box;
+    // display: -moz-box;
+    // display: -ms-flexbox;
+    // display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .stepPart{
+        margin: 10px;
+        width: 45rem;
+    }
+}
+
+@media only screen and (max-width: 45rem) {
+    .section_stepper {
+        display: inherit;
+        overflow: auto;
+  }
+}

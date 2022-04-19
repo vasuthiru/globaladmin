@@ -1,0 +1,23 @@
+<!-- <mat-toolbar class="ga-bg-white">
+    <button mat-icon-button (click)="goBack()">
+        <mat-icon svgIcon="arrow_left_primary"></mat-icon>
+    </button>&nbsp;&nbsp;
+	<h1 class="ga-text-primary-600-b">Add School</h1>
+</mat-toolbar>
+<div class="ga-pb-5">
+    <router-outlet></router-outlet>
+</div> -->
+
+<div class="flexcontainer">
+    <header>
+        <mat-toolbar class="ga-bg-white">
+            <button mat-icon-button (click)="goBack()">
+                <mat-icon svgIcon="arrow_left_primary"></mat-icon>
+            </button>&nbsp;&nbsp;
+            <h1 class="ga-text-primary-600-b">Add School</h1>
+        </mat-toolbar>
+    </header>
+    <div class="main_content ga-pagelayout">
+        <router-outlet></router-outlet>
+    </div>
+</div>

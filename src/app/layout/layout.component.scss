@@ -1,0 +1,48 @@
+@import '../../assets/styles/variables/colors.variables.scss';
+// #main{
+//     width: calc(100% - 64px);
+//     margin-left: 64px;
+//     transition: .3s;
+//     // padding: 2rem;
+//     // border-radius: 1rem;
+//     #mainContent{
+//         // margin:1rem;
+//         margin: 0 1rem 2rem .2rem;
+//         background: #F6F7F8 !important;
+//         // padding: 2rem;
+//         border-radius: 1rem;
+//         min-height: calc(100vh - 6rem);
+//         // max-height: calc(100vh - 6rem);
+//         overflow: hidden;
+//     }
+// }
+
+.flexcontainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+    header{
+        flex:none;
+        justify-self: flex-start;
+    }
+}
+.flexrow{
+    display: flex;
+    height: 100%;
+    // width: 100%;
+    overflow: hidden;    
+}
+.sidenavigation{
+    flex: none;
+    height: 100%;
+}
+.maincontent{
+    flex: auto;
+    // height: 100%;
+    margin: 0 1rem 1.5rem .2rem;
+    background:  $layout-bg !important;
+    border-radius: 1rem;
+    overflow: auto;
+}

@@ -1,0 +1,66 @@
+@import "../variables/factory.variables.scss";
+
+// margin, padding ex: ga-m-1 or ga-p-1 ,  ex: ml,pl,mr,pr,pt,mt,mb,pb ------- left right top bottom
+
+@mixin margin-padding-map($padding-map, $mapping) {
+    @each $key, $value in $padding-map {    
+      .ga-p-#{$key}{
+          padding: map-get($padding-map, $key);
+      }
+      .ga-m-#{$key}{
+          margin: map-get($padding-map, $key) !important;
+      }
+      .ga-pl-#{$key}{
+          padding-left: map-get($padding-map, $key);
+      }
+      .ga-ml-#{$key}{
+          margin-left: map-get($padding-map, $key);
+      }
+      .ga-pt-#{$key}{
+          padding-top: map-get($padding-map, $key);
+      }
+      .ga-mt-#{$key}{
+          margin-top: map-get($padding-map, $key);
+      }
+      .ga-pr-#{$key}{
+          padding-right: map-get($padding-map, $key);
+      }
+      .ga-mr-#{$key}{
+          margin-right: map-get($padding-map, $key);
+      }
+      .ga-pb-#{$key}{
+          padding-bottom: map-get($padding-map, $key);
+      }
+      .ga-mb-#{$key}{
+          margin-bottom: map-get($padding-map, $key);
+      }
+    }
+}
+  
+@include margin-padding-map($margins, margins); 
+@include margin-padding-map($paddings, paddings); 
+
+// width ex: ga-w-100  is 100% width
+@mixin width-map() {
+    // @for $i from 1 through 100 {
+    //     .ga-width-#{$i}{
+    //         width : round(percentage($i/100));
+    //     }
+    // }
+    @for $i from 0 through 100 {
+        .ga-width-#{$i} {
+            width: #{$i}#{"%"} !important;
+        }
+    }
+}
+@include width-map(); 
+
+// fontsizes
+@mixin fontSizes-map($font-map, $mapping){
+    @each $key, $value in $font-map {
+       .font-#{$key}{
+           font-size: map-get($font-map, $key);
+       } 
+    }
+}
+@include fontSizes-map($fontSizes, size);

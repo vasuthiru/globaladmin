@@ -1,0 +1,81 @@
+// @import "../../../../assets/styles/components/mat.style.scss";
+// #section_stepper{
+//     padding: 0;
+//     margin: 0;
+//     list-style: none;
+//     display: -webkit-box;
+//     display: -moz-box;
+//     display: -ms-flexbox;
+//     display: -webkit-flex;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     #stepPart{
+//         margin: 10px;
+//         width: 45rem;
+//     }
+// }
+// ::ng-deep.mat-horizontal-stepper-header-container{
+//     // width: 50%;
+//     display: block;
+// }
+// ::ng-deep.mat-stepper-horizontal{
+//     background-color: inherit;
+// }
+// ::ng-deep.mat-horizontal-stepper-header .mat-step-icon{
+//     background-color: white;
+//     border: 2px solid #ff6924;
+//     font-size: 9px;
+
+// }
+// ::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header:hover{
+//     background-color: inherit;
+// }
+// ::ng-deep.mat-horizontal-content-container {
+//     margin-top: 50px;
+//     // text-align: center;
+// }
+// ::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header .mat-step-icon{
+//     width: 16px;
+//     height: 16px;
+//     color: #ff6924;
+// }
+// ::ng-deep.mat-stepper-label-position-bottom .mat-stepper-horizontal-line, ::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after,::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before{
+//     top: 31px;
+//     background-color: #ff6924;
+// }
+// ::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::after{
+//     width: calc(60% - 20px) !important;
+// }
+// ::ng-deep.mat-stepper-label-position-bottom .mat-horizontal-stepper-header::before{
+//     width: calc(60% - 18px) !important;
+// }
+// form{
+//     text-align: center;
+//     mat-form-field{
+//         width: 60%;
+//     }
+// }
+// ::ng-deep.mat-step-header{
+//     // top: 30px;
+// }
+// ::ng-deep.mat-stepper-horizontal-line{
+//     // margin: 0 -56px;
+// }
+// ::ng-deep.mat-step-header .mat-step-label.mat-step-label-active {
+//     color: #ff6924;
+// }
+// ::ng-deep.mat-step-header .mat-step-icon-state-done{
+//     background-color: #ff6924;
+// }
+// ::ng-deep.mat-horizontal-stepper-header {
+//     pointer-events: none !important;
+// }
+// ::ng-deep.mat-step-header .mat-step-icon-state-edit{
+//     background: #ff6924;
+// }
+// ::ng-deep.mat-step-header .mat-step-icon-selected{
+//     background: #ff6924;
+//     pointer-events: inherit;
+// }
+

@@ -1,0 +1,68 @@
+
+<form [formGroup]="classSubjectForm" #formDir="ngForm" (ngSubmit)="onSubmitClassSubject()">
+    <div class="ga-m-4 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="50" class="sec1" fxFlex.xs="55">
+            <div>
+                <label>Classes<span class="invalidStar">*</span></label> &nbsp;             
+                <div class="formField">
+                    <mat-form-field appearance="outline">
+                        <mat-select placeholder="Select Class" [errorStateMatcher]="matcher" (selectionChange)="onSelectChange($event)" formControlName="class_select" multiple>
+                          <mat-option *ngFor="let class of classes" [value]="class.id">{{class.id}}{{class.place}}</mat-option>
+                        </mat-select>
+                        <mat-error class="ga-mt-4" *ngIf="classSubjectForm.controls['class_select'].hasError('required') && formDir.submitted">
+                            Class Required*
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="50" class="sec2">
+            <label for="">Subjects<span class="invalidStar">*</span></label> &nbsp;
+            <div class="formField">
+                <mat-form-field appearance="outline">
+                    <mat-select placeholder="Select subjects" [errorStateMatcher]="matcher" (selectionChange)="onSelectChange($event)" formControlName="subject_select">
+                      <mat-option *ngFor="let sub of subjects" [value]="sub.name">{{sub.name | titlecase}}</mat-option>
+                    </mat-select>
+                    <mat-error class="ga-mt-4" *ngIf="classSubjectForm.controls['subject_select'].hasError('required') && formDir.submitted">
+                        Subject Required*
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>   
+    </div>
+    <div class="ga-m-5 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+        <div fxFlex="100">  
+            <mat-error class="ga-mt-4" *ngIf="!sectionChecker && formDir.submitted">
+                Section should not be empty*
+            </mat-error>           
+            <ga-class-table [selected_class]="classSubjectForm.value.class_select" (sectionSelection)="getSectionSelection($event)"></ga-class-table>
+        </div>
+    </div>
+    <div class="ga-f-r">
+        <button class="ga-btn-secondary">Go Back</button> &nbsp;
+        <button class="ga-btn-primary" type="submit">Next</button> &nbsp;
+
+    </div>
+</form>
+
+
+
+<!-- <div class="ga-m-4 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill>
+    <div fxFlex="50" class="sec1" fxFlex.xs="55">
+        <div>
+            <div>Classes</div> &nbsp; 
+            <div id="dropDownItems" (click)="openDropDown()">{{custom_selectedClass}}
+                <div id="openingDropdown" *ngIf="is_opened">
+                    <ul id="selectDropdown">
+                        <li *ngFor="let class of classes" (click)="selectClassItem(class)">
+                            <span>{{class.id}}</span>
+                            <span [ngStyle]="{'display':class.is_selected?'initial':'none'}" style="float: right;">
+                                <mat-icon style="width: 12px;height: 12px;" svgIcon="tick"></mat-icon>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

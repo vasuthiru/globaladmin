@@ -1,0 +1,47 @@
+<form [formGroup]="schoolSummaryForm" #formDir="ngForm" (ngSubmit)="onSubmitSummaryForm()">
+    <ng-container *ngFor="let summary of summaryFields">
+        <ng-container *ngIf="summary.type==='text'">
+            <div class="ga-m-4 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex class="ga-width-30">{{summary.control | titlecase | replaceFilter}}<span class="invalidStar">*</span></div>
+                <div class="ga-width-70">
+                  <mat-form-field class="ga-width-100" appearance="outline">
+                      <input matInput placeholder="Group Staff" autocomplete="off" [errorStateMatcher]="matcher" formControlName="{{summary.control}}" required>
+                      <mat-error class="ga-mt-4" *ngIf="schoolSummaryForm.controls[summary.control].hasError('required')">
+                        Address Required*
+                      </mat-error>
+                  </mat-form-field>            
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="summary.type==='object'">
+            <div class="ga-m-4 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex class="ga-width-30">{{summary.control | titlecase | replaceFilter}}<span class="invalidStar">*</span></div>
+                <div class="ga-width-70">
+                  <div id="listedControls">
+                    <div id="listedCtrlVal" *ngFor="let a of summary.value">
+                        <div>{{a}}</div>
+                    </div> 
+                  </div>          
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="summary.type==='number'">
+            <div class="ga-m-4 ga-text-center" fxLayout="row" fxLayout.xs="column" fxFlexFill class="ga-m-3 ga-p-1" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutGap="16px">
+                <div fxFlex class="ga-width-30">{{summary.control | titlecase | replaceFilter}}<span class="invalidStar">*</span></div>
+                <div class="ga-width-70">
+                  <mat-form-field class="ga-width-100" appearance="outline">
+                      <input matInput placeholder="Group Staff" autocomplete="off" [errorStateMatcher]="matcher" formControlName="{{summary.control}}" required>
+                      <mat-error class="ga-mt-4" *ngIf="schoolSummaryForm.controls[summary.control].hasError('required')">
+                        Address Required*
+                      </mat-error>
+                  </mat-form-field>            
+                </div>
+              </div>
+        </ng-container>
+    </ng-container>
+    <div class="ga-f-r ga-mt-4">
+        <button class="ga-btn-secondary" type="button" (click)="gotoPrevious()">Go Back</button> &nbsp;
+        <button class="ga-btn-primary" type="submit">Next</button> &nbsp;
+
+    </div>
+</form>

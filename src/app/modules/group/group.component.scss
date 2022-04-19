@@ -1,0 +1,38 @@
+// .mat-icon {
+//     background: #FF6924;
+//     border-radius: 50%;
+//     line-height: 24px;
+//     height: 24px;
+//     width: 24px;
+//     text-align: center;
+//     color: white;
+//     font-size: 16px;
+//     font-weight: 600;
+//     transition: .3s;
+// }
+
+.flexcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  header {
+    flex: none;
+  }
+  .main_content {
+    flex: auto;
+    height: 100%;
+    overflow: hidden;
+    overflow: auto;
+    .ga-pagelayout {
+      overflow: hidden;
+    //   overflow: auto;
+    }
+  }
+}
+
+.mat-icon:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
+}

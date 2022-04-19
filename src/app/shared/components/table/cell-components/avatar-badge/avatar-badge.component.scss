@@ -1,0 +1,24 @@
+.avatar-group {
+  display: flex;
+  align-items: center;
+  .avatar {
+    padding-right: 10px;
+  }
+  .avatar-details {
+    line-height: 20px;
+    padding: 10px 0;
+    .title {
+      color: rgba(4, 4, 4, 0.87);
+      &.bold {
+        font-weight: bold;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+      }
+    }
+    .small {
+      font-size: 13px;
+      color: #717171;
+      letter-spacing: 0.5px;
+    }
+  }
+}

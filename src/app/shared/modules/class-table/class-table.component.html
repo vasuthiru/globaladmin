@@ -1,0 +1,19 @@
+<section>
+    <mat-card>
+        <mat-card-content>
+            <table class="ga-width-100">
+                <ng-container *ngFor="let class of classes; let i=index">
+                    <tr [ngClass]="class.is_selected?'rowActive':'rowInactive'">
+                        <th [ngClass]="class.is_selected?'colActive':'colInactive'">{{class.id}}{{class.place}}</th>
+                        <ng-container *ngFor="let section of class.sections; let j=index">
+                            <td [ngClass]="section.is_active?'colActive':'colInactive'">
+                                {{section.value | titlecase}} &nbsp;
+                                <mat-checkbox (change)="checkCheckBoxvalue($event, section, i)" #ch [checked]="section.is_checked?true:false"></mat-checkbox>
+                            </td>
+                        </ng-container>                        
+                    </tr>
+                </ng-container>
+            </table>        
+        </mat-card-content>
+    </mat-card>
+</section>

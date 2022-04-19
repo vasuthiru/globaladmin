@@ -1,0 +1,13 @@
+#listedControls{
+    display: inline-flex;
+    background-color: #EBECEF;
+    border-radius: 5px;
+    padding: 4px;
+    #listedCtrlVal{
+        border: .5px solid#525A6B;
+        border-radius: 5px;
+        padding: 4px 7px;
+        margin: 4px;
+        text-transform: capitalize;
+    }
+}

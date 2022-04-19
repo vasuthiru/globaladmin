@@ -1,0 +1,14 @@
+<div class="avatar-group">
+  <div [ngClass]="{ squareAvatar: shape === 'square' }" *ngIf="avatar" class="avatar">
+    <ng-container *ngIf="imageUrl; else avatar">
+      <ngx-avatar size="40" src="imageUrl" class="mr-3 d-inline-block avatar-content"> </ngx-avatar>
+    </ng-container>
+    <ng-template #avatar>
+      <ngx-avatar size="40" initialsSize="2" [name]="name" class="mr-3 d-inline-block avatar-content"> </ngx-avatar>
+    </ng-template>
+  </div>
+  <div class="avatar-details">
+    <div class="title" [ngClass]="caption ? 'bold' : ''">{{ name }}</div>
+    <div class="small" *ngIf="caption">{{ caption }}</div>
+  </div>
+</div>

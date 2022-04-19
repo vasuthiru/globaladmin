@@ -1,0 +1,87 @@
+
+// // mat-formfield
+// .mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+//     // border: 0.2px solid #666;
+//     border: none;
+//     opacity: 1;
+//     border-radius: 5px;
+//     box-shadow: 0px 0px 0px 4px #FFE3D7;
+//     .mat-form-field-outline-start,
+//     .mat-form-field-outline-gap,
+//     .mat-form-field-outline-end {
+//         border: none;
+//     }
+// }
+// .mat-form-field-appearance-outline .mat-form-field-outline{
+//     border:none;
+//     background-color: white;
+//     border-radius: .275rem;
+// }
+// // /* focused color */
+// ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+//     color: transparent !important;
+//     box-shadow: 0px 0px 0px 4px #FFE3D7;
+//     border: 0.5px solid #FF6924;
+//     border-radius: 5px;
+// }
+// .mat-form-field-flex{
+//     padding: .3em .5em !important;
+// }
+// ::ng-deep.mat-form-field-wrapper{
+//     padding: 0 !important;
+// }
+// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+//     padding: 0.25rem 0.65em 0.65em 0.25em;
+// }
+// ::ng-deep.mat-form-field-wrapper{
+//     padding: 0 !important;
+// }
+// ::ng-deep.mat-form-field-appearance-outline .mat-form-field-prefix{
+//     top: .5em !important;
+// }
+// .mat-form-field{
+//     font-size: .75em;
+// }
+// /* default and hover color */
+// ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+//     color: #fff;
+//     box-shadow: 0px 1px 2px rgba(40, 30, 16, 0.1);
+//     background-color: white;
+// }
+
+
+
+// // /* floating label color */
+// // ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-label { 
+// //     color: green; 
+// // }
+
+// // mat checkbox
+// ::ng-deep.mat-checkbox-frame{
+//     border-radius: .25rem !important;
+//     border: 1px solid #838CA0;
+// }
+// ::ng-deep .mat-checkbox:hover .mat-checkbox-frame {
+//     box-shadow: 0px 0px 0px 4px rgb(255 210 189 / 29%);
+// }
+// ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+//     background-color: #ff6924 !important;
+//     border-radius: .25rem !important;
+// }
+// ::ng-deep .mat-checkbox-inner-container {
+//     width: 18px !important;height: 18px !important;
+// }
+
+// // mat radio
+// ::ng-deep .mat-radio-checked .mat-radio-outer-circle {
+//     border-color: #ff6924 !important;
+//     color: #838CA0;
+// }
+// :ng-deep .mat-radio-checked .mat-radio-outer-circle {
+//     background-color: #ff6924 !important;
+//     color:#838CA0;
+// }
+// ::ng-deep.mat-radio-button.mat-accent .mat-radio-inner-circle{
+//     background-color: #ff6924 !important;
+//     color:#838CA0;
+// }

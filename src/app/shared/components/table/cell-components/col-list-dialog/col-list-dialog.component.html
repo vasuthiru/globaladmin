@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Columns List</h2>
+<mat-dialog-content>
+  <div cdkDropListGroup>
+    <div class="column-container">
+      <div class="column-list">
+        <div cdkDropList [cdkDropListData]="displayColumns" (cdkDropListDropped)="drop($event)">
+          <div
+            class="column-box"
+            cdkDrag
+            *ngFor="let item of displayColumns"
+            [cdkDragDisabled]="item.hasOwnProperty('reOrder') && !item.reOrder"
+            [ngClass]="{ 'no-drag': item.hasOwnProperty('reOrder') && !item.reOrder }"
+          >
+            <mat-icon class="drag-indicator">drag_indicator</mat-icon> <span>{{ item.headerName }}</span>
+            <mat-icon
+              class="visibility-icon"
+              [ngClass]="{ active: item.visible, disable: item.hasOwnProperty('hide') && !item.hide }"
+              (click)="item.visible = !item.visible"
+            >
+              visibility
+            </mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button (click)="applyChanges()" cdkFocusInitial>Apply</button>
+</mat-dialog-actions>

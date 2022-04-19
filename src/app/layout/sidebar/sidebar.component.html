@@ -1,0 +1,16 @@
+<div class="sidebar" #sidenav>
+    <ul class="list-group">
+        <ng-container *ngFor="let item of menu_items; let i = index">
+            <li class="list-group-item border-0">
+                <a class="ga-btn" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="settingSvgIcon(item, 'active', i)" (mouseleave)="settingSvgIcon(item, 'leave', i)" (mouseenter)="settingSvgIcon(item, 'enter', i)">
+                    <span style="display: inline-flex;">
+                        <mat-icon [svgIcon]="item.behave+item.icon"></mat-icon>&nbsp;
+                    <span [ngStyle]="{'opacity':is_toggled_flag?'1':'0', 'display':is_toggled_flag?'block':'none'}">{{item.name}}</span>
+
+                    </span>
+                    <!-- <span [ngStyle]="{'opacity':is_toggled_flag?'1':'0'}">{{item.name}}</span> -->
+                </a>
+            </li>
+        </ng-container>
+    </ul>    
+</div>

@@ -1,0 +1,24 @@
+<section>
+    <form [formGroup]="uploadStaff" #uploadFormDir="ngForm" (ngSubmit)="OnSubmitStaffForm()">
+        <div>
+            <p>Upload {{uploadLabel | titlecase}}*</p>
+            <mat-error *ngIf="staffControls['staff_file'].hasError('required')&&uploadFormDir.submitted">Please upload Excel*</mat-error>
+        </div>
+        <div id="uploadBox" >
+            <div id="uploadBox_file" (click)="fileInput.click()">
+                <input type="file" #fileInput hidden accept=".xlsx, .xls" (change)="getFileInput($event)">
+                <mat-icon svgIcon="addfile_circle"></mat-icon>
+                <!-- <span>
+                    <i class="fa fa-plus" ></i>
+                </span> -->
+            </div>
+            <div id="uploadBox_file_text">
+                {{uploadStaff.valid?uploadStaff.value.staff_file_name:'upload Excel here'}}
+            </div>
+        </div>
+        <div class="ga-text-center ga-mt-3">
+            <button class="ga-btn-b" type="button"(click)="previous()">Previous</button> &nbsp;
+            <button class="ga-btn-primary" type="submit">Next</button>
+        </div>
+    </form>
+</section>

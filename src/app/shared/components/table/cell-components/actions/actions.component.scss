@@ -1,0 +1,15 @@
+span
+ {
+   display: flex;
+   background-color: #fff;
+   box-shadow: 0 .25rem .25rem rgba(0,0,0,.075);
+   border-radius: 12px;
+   padding: 6px 12px;
+   width: fit-content;
+   i {
+     padding-right: 8px;
+     &:last-child {
+       padding-right: 0;
+     }
+   }
+ }

@@ -1,0 +1,43 @@
+// @import '../../../assets/styles/components/mat.style.scss';
+.topNav{
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    height: 64px;
+}
+// mat menu list items horizontal
+::ng-deep .mat-menu-panel{
+    min-height: auto !important;
+    .mat-menu-content:not(:empty){
+        padding:0!important;
+        .mat-list-base{
+            display: inline-flex !important;
+            padding:0!important;
+            .mat-list-item{
+                width: auto !important;
+                cursor: pointer;
+                height: 36px;
+            }
+            .mat-list-item:hover{
+                background-color: #FF6924;
+                color: white;
+            }
+        }
+    }
+}
+.ga-btn {
+    .ga-plus.mat-icon{
+        width: 32px !important;
+        height: 32px !important;
+    }
+}
+
+.formField::ng-deep.mat-form-field-appearance-outline .mat-form-field-wrapper{
+    padding: 1px;
+}
+
+

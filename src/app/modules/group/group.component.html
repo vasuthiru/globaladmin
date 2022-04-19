@@ -1,0 +1,23 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-white bg-white p-3" #navbar>
+    <div class="container-fluid">
+        <div>
+            <a class="navbar-brand ms-1 gaHover" (click)="goBack()">
+                <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="navbar-brand ms-3 gaTitle fw-bold">Add Group</a>
+        </div>
+    </div>
+</nav> -->
+<div class="flexcontainer">
+    <header>
+        <mat-toolbar class="ga-bg-white">
+            <button mat-icon-button (click)="goBack()">
+                <mat-icon svgIcon="arrow_left_primary"></mat-icon>
+            </button>&nbsp;&nbsp;
+            <h1 class="ga-text-primary-600-b">Add Group</h1>
+        </mat-toolbar>
+    </header>
+    <div class="main_content ga-pagelayout">
+        <router-outlet></router-outlet>
+    </div>
+</div>
